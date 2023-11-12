@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:weapon_inventory/menu.dart';
+import 'package:val_inventory/menu.dart';
 
 void main() {
   runApp(const MyApp());

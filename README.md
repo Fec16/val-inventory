@@ -46,8 +46,8 @@
 
     + Jalankan perintah berikut!
         ```
-        flutter create weapon_inventory
-        cd weapon_inventory
+        flutter create val_inventory
+        cd val_inventory
         flutter run
         ```
 
@@ -57,7 +57,7 @@
 
         ```
         import 'package:flutter/material.dart';
-        import 'package:weapon_inventory/menu.dart';
+        import 'package:val_inventory/menu.dart';
 
         void main() {
         runApp(const MyApp());
@@ -141,3 +141,22 @@
             Item("Logout", Icons.logout, Colors.indigo.shade900),
         ];
         ```
+</details>
+
+<details>
+<summary>Tugas 8</summary>
+
+1. Jelaskan perbedaan antara Navigator.push() dan Navigator.pushReplacement(), disertai dengan contoh mengenai penggunaan kedua metode tersebut yang tepat!
+    + a
+
+2. Jelaskan masing-masing layout widget pada Flutter dan konteks penggunaannya masing-masing!
+    + a 
+
+3. Sebutkan apa saja elemen input pada form yang kamu pakai pada tugas kali ini dan jelaskan mengapa kamu menggunakan elemen input tersebut!
+    + a
+
+4. Bagaimana penerapan clean architecture pada aplikasi Flutter?
+    + a
+
+5. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step! (bukan hanya sekadar mengikuti tutorial)
+    + a 
