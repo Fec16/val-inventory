@@ -1,4 +1,4 @@
-### **Jason's Weapon Inventory**
+### **Jason's Val Inventory**
 ---
 #### Nama: Jason Kent Winata
 #### NPM: 2206081313
@@ -147,7 +147,31 @@
 <summary>Tugas 8</summary>
 
 1. Jelaskan perbedaan antara Navigator.push() dan Navigator.pushReplacement(), disertai dengan contoh mengenai penggunaan kedua metode tersebut yang tepat!
-    + a
+    + `Navigator.push()` digunakan untuk menambahkan tampilan baru ke dalam tumpukan navigasi (navigator stack). Ini berarti bahwa tampilan baru akan ditumpuk di atas tampilan saat ini, dan pengguna dapat kembali ke tampilan sebelumnya dengan menekan tombol "Back" di perangkat mereka. 
+
+        Contoh penggunaan `Navigator.push()`:
+        ```
+        // Navigator
+        if (item.name == "Tambah Item") {
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                builder: (context) => const ShopFormPage(),
+            ));
+        }
+        ```
+    + `Navigator.pushReplacement()` digunakan untuk menggantikan tampilan saat ini di tumpukan navigasi dengan tampilan baru. Ini berguna ketika Anda ingin menggantikan halaman saat ini dengan halaman yang berbeda, seperti saat pengguna menyelesaikan suatu aksi tertentu. Ini membuat tampilan sebelumnya dihapus dari tumpukan dan digantikan oleh tampilan baru.
+
+        Contoh penggunaan `Navigator.pushReplacement()`:
+        ```
+        onPressed: () {
+        Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(
+                builder: (context) => MyHomePage(),
+            ));
+        },
+        ```
 
 2. Jelaskan masing-masing layout widget pada Flutter dan konteks penggunaannya masing-masing!
     + a 
