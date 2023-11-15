@@ -174,13 +174,27 @@
         ```
 
 2. Jelaskan masing-masing layout widget pada Flutter dan konteks penggunaannya masing-masing!
-    + a 
+    + Single-child Layout <br>
+    Widget yang hanya memiliki satu child. Penggunaannya saat hanya memerlukan satu widget dalam satu area. Salah satu widget yang umum digunakan dari kategori ini adalah Container, yang berfungsi sebagai wadah untuk widget lain.
+
+    + Multi-child Layout <br>
+    Widget yang memungkinkan memiliki lebih dari satu anak (children). Penggunaannya ketika perlu menempatkan sejumlah widget dalam satu area. Widget yang sering digunakan dari kelompok ini adalah `Row` untuk penempatan horizontal dan `Column` untuk penempatan vertikal.
+
+    + Silver Widgets <br>
+    Widget khusus untuk area scrollable, digunakan untuk menciptakan fitur dinamis saat melakukan scroll. <br>
+    Contoh: CupertinoSliverNavigationBar, CustomScrollView, SliverAppBar, etc.
 
 3. Sebutkan apa saja elemen input pada form yang kamu pakai pada tugas kali ini dan jelaskan mengapa kamu menggunakan elemen input tersebut!
-    + a
+    + `TextFormField` karena memudahkan pengguna dalam memasukkan data. Sedangkan fitur validasi dan hint-nya sangat mempercepat pekerjaan pengembang.
 
 4. Bagaimana penerapan clean architecture pada aplikasi Flutter?
-    + a
+    + Pada pengembangan aplikasi Flutter, prinsip *clean architecture*  diterapkan untuk mengorganisir file sesuai dengan fungsionalitasnya. <br>
+    Contoh: Folder `screens` berisi files untuk tampilan layar. Sedangkan implementasi dan fungsionalitas aplikasi berada pada folder `widgets`.
 
 5. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step! (bukan hanya sekadar mengikuti tutorial)
-    + a 
+    + Buat satu halaman form baru pada aplikasi! 
+    + Tambahkan 4 elemen input yaitu `name, price, amount, dan description`.
+    + Implement tombol `save` serta lakukan validasi input. Cek `screens/shoplist_form.dart`!
+    + Arahkan pengguna ke halaman form ketika menekan tombol `Tambah Item` pada halaman utama. Cek `widgets/shop_card.dart`!
+    + Buat drawer untuk navigasi ke `Halaman Utama` dan `Tambah Item`. Cek `widgets/left_drawer.dart`!
+    + Bonus: Cek `screens/shoplist_form.dart`!
