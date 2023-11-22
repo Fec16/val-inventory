@@ -182,7 +182,7 @@
 
     + Silver Widgets <br>
     Widget khusus untuk area scrollable, digunakan untuk menciptakan fitur dinamis saat melakukan scroll. <br>
-    Contoh: CupertinoSliverNavigationBar, CustomScrollView, SliverAppBar, etc.
+    Contoh: `CupertinoSliverNavigationBar, CustomScrollView, SliverAppBar`, etc.
 
 3. Sebutkan apa saja elemen input pada form yang kamu pakai pada tugas kali ini dan jelaskan mengapa kamu menggunakan elemen input tersebut!
     + `TextFormField` karena memudahkan pengguna dalam memasukkan data. Sedangkan fitur validasi dan hint-nya sangat mempercepat pekerjaan pengembang.
@@ -198,3 +198,49 @@
     + Arahkan pengguna ke halaman form ketika menekan tombol `Tambah Item` pada halaman utama. Cek `widgets/shop_card.dart`!
     + Buat drawer untuk navigasi ke `Halaman Utama` dan `Tambah Item`. Cek `widgets/left_drawer.dart`!
     + Bonus: Cek `screens/shoplist_form.dart`!
+</details>
+
+<details>
+<summary>Tugas 9</summary>
+
+1. Apakah bisa kita melakukan pengambilan data JSON tanpa membuat model terlebih dahulu? Jika iya, apakah hal tersebut lebih baik daripada membuat model sebelum melakukan pengambilan data JSON?
+    + Ya, dengan metode sebuah variabel yang menyimpan sebuah dictionary berisi data. 
+    + Mempermudah, jika data kompleks atau memerlukan manipulasi lebih lanjut, membuat model dapat membantu dalam pengelolaan data.
+
+2. Jelaskan fungsi dari CookieRequest dan jelaskan mengapa instance CookieRequest perlu untuk dibagikan ke semua komponen di aplikasi Flutter.
+    + Inisialisasi session, login, dan logout
+    + Informasi session cookies yang disimpan secara local
+    + Permintaan HTTP dengan GET dan POST
+    + `CookieRequest` dibagikan ke semua komponen di aplikasi Flutter agar status login atau sesi cookies konsisten.
+
+3. Jelaskan mekanisme pengambilan data dari JSON hingga dapat ditampilkan pada Flutter.
+    + Dengan website *Quicktype* untuk membuat model custom dari data Json pada tugas Django.
+    + Tambahkan dependensi HTTP pada `android/app/src/main/AndroidManifest.xml`
+    ```
+    <!-- Required to fetch data from the Internet. -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    ```
+    + Melakukan *Fetch Data* pada `lib/screens` secara async dengan mengirim permintaan HTTP.
+    + Dengan `FutureBuilder` dan `ListView.builder` data diolah dan ditampilkan pada Flutter.
+
+4. Jelaskan mekanisme autentikasi dari input data akun pada Flutter ke Django hingga selesainya proses autentikasi oleh Django dan tampilnya menu pada Flutter.
+    + Input `username` dan `password` pada loginPage
+    + Melakukan autentikasi pada `authentication/views.py` milik Django 
+    + Jika benar, diarahkan ke `HomePage` dan pesan selamat datang dengan `SnackBar`
+ 
+5. Sebutkan seluruh widget yang kamu pakai pada tugas ini dan jelaskan fungsinya masing-masing.
+    + TextField: Menerima input dari user
+    + FutureBuilder: Membangun widget secara asinkron
+    + ListView.builder: Membuat daftar yang dapat discroll
+    + Column: Menyusun komponen secara vertikal
+    + Row: Menyusun komponen secara horizontal
+
+8. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step! (bukan hanya sekadar mengikuti tutorial).
+    + Pada Django, Lakukan integrasi dan autentikasi dengan Flutter
+        + Buat app `authentication`!
+        + Install library `corsheaders`!
+    + Buat fungsi `login` pada `views.py`!
+    + Install dan import package `pbp_django_auth`!
+    + Pada Flutter, Import `pbp_django_auth`!
+    + Modifikasi root widget sehingga menyediakan `CookieRequest`!
+    + Membuat `lib/screens/login.dart`

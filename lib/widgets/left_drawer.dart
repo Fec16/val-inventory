@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:val_inventory/screens/list_product.dart';
 import 'package:val_inventory/screens/menu.dart';
 import 'package:val_inventory/screens/shoplist_form.dart';
 import 'package:val_inventory/screens/shoplist_cart.dart';
@@ -26,7 +27,6 @@ class LeftDrawer extends StatelessWidget {
                     color: Colors.white,
                   ),
                 ),
-
                 Padding(padding: EdgeInsets.all(10)),
                 Text(
                   "Buy Phase",
@@ -65,16 +65,16 @@ class LeftDrawer extends StatelessWidget {
                   ));
             },
           ),
+          // Kode ListTile Menu
           ListTile(
-            leading: const Icon(Icons.add_shopping_cart),
-            title: const Text('Tambah Item'),
-            // ShopList_Form
+            leading: const Icon(Icons.shopping_basket),
+            title: const Text('Daftar Produk'),
             onTap: () {
-              Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const ShopFormPage(),
-                  ));
+              // Route menu ke halaman produk
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const ProductPage()),
+              );
             },
           ),
         ],

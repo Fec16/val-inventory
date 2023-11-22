@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:pbp_django_auth/pbp_django_auth.dart';
+import 'package:provider/provider.dart';
 import 'package:val_inventory/widgets/left_drawer.dart';
 import 'package:val_inventory/widgets/item_card.dart';
 import 'package:val_inventory/screens/menu.dart';
@@ -21,6 +23,7 @@ class _ShopFormPageState extends State<ShopFormPage> {
 
   @override
   Widget build(BuildContext context) {
+    final request = context.watch<CookieRequest>();
     return Scaffold(
       appBar: AppBar(
         title: const Center(
@@ -28,7 +31,6 @@ class _ShopFormPageState extends State<ShopFormPage> {
             'Buy Details',
           ),
         ),
-
         actions: [
           IconButton(
             icon: const Icon(Icons.arrow_back),
@@ -44,7 +46,6 @@ class _ShopFormPageState extends State<ShopFormPage> {
         backgroundColor: Colors.indigo,
         foregroundColor: Colors.white,
       ),
-
       drawer: const LeftDrawer(),
       body: Form(
         key: _formKey,
@@ -74,7 +75,6 @@ class _ShopFormPageState extends State<ShopFormPage> {
                 },
               ),
             ),
-            
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: TextFormField(
@@ -101,7 +101,6 @@ class _ShopFormPageState extends State<ShopFormPage> {
                 },
               ),
             ),
-
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: TextFormField(
@@ -128,7 +127,6 @@ class _ShopFormPageState extends State<ShopFormPage> {
                 },
               ),
             ),
-
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: TextFormField(
@@ -152,7 +150,6 @@ class _ShopFormPageState extends State<ShopFormPage> {
                 },
               ),
             ),
-            
             Align(
               alignment: Alignment.bottomCenter,
               child: Padding(
@@ -161,7 +158,7 @@ class _ShopFormPageState extends State<ShopFormPage> {
                   style: ButtonStyle(
                     backgroundColor: MaterialStateProperty.all(Colors.indigo),
                   ),
-                  onPressed: () {
+                  onPressed: () async {
                     if (_formKey.currentState!.validate()) {
                       cart.add(Item(_name, _price, _amount, _description));
                       showDialog(
